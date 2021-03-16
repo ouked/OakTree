@@ -7,7 +7,7 @@
 
 int main(void) {
     struct node *root = treeFromFile("values.txt");
-    printf("%d\n", valueOf(root));
+    printf("Output from file: %d\n", valueOf(root));
 
     runTests();
     return 0;

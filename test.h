@@ -1,3 +1,2 @@
-extern void writeFile(const char *path, const char *data);
-
+/// Run unit tests
 extern void runTests();

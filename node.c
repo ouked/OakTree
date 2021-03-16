@@ -3,41 +3,41 @@
 #include "node.h"
 #include "util.h"
 
-// create a new op node 
-// data = 0 if read
+
 struct node *newOpNode(enum opType optype) {
-    struct node *node = (struct node * ) malloc(sizeof(struct node));
-    node -> type = optype;
-    node -> left = NULL;
-    node -> right = NULL;
+    // data = 0 if read
+    struct node *node = (struct node *) malloc(sizeof(struct node));
+    node->type = optype;
+    node->left = NULL;
+    node->right = NULL;
     return node;
 }
 
-// create a new num node
-// no children
+
 struct node *newNumNode(int data) {
-    struct node *node = (struct node * ) malloc(sizeof(struct node));
-    node -> data = data;
-    node -> type = NUM;
+    struct node *node = (struct node *) malloc(sizeof(struct node));
+    node->data = data;
+    node->type = NUM;
     return node;
 }
 
-// check if node is safe ((num) or (operator with 2 valid children))
+
 int isSafe(struct node *n) {
-    return !(n -> type != NUM && (n -> left == NULL || n -> right == NULL || n->left->type == ERR || n->right->type == ERR));
+//    ((num) or (operator with 2 valid children))
+    return !(n->type != NUM && (n->left == NULL || n->right == NULL || n->left->type == ERR || n->right->type == ERR));
 }
 
-// evaluates node 
+
 int valueOf(struct node *n) {
-    if (!isSafe(n)){
+    if (!isSafe(n)) {
         printError("UNSAFE NODE\n");
         return 0;
     }
-    switch (n -> type) {
+    switch (n->type) {
         case NUM:
-            return n -> data;
+            return n->data;
         case ADD:
-            return (valueOf(n->left) + valueOf(n->right)); 
+            return (valueOf(n->left) + valueOf(n->right));
         case SUB:
             return (valueOf(n->left) - valueOf(n->right));
         case DIV:
@@ -50,6 +50,7 @@ int valueOf(struct node *n) {
             printError("ERROR NODE IN TREE\n");
             return 0;
         default:
+//            Op Type not implemented
             printError("UNHANDLED OP TYPE\n");
             return 0;
     }

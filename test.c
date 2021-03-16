@@ -7,6 +7,9 @@
 #include "stack.h"
 #include "util.h"
 
+/// Write a new file
+/// \param path Filepath to write to
+/// \param data Data to write to file
 void writeFile(const char *path, const char *data) {
     FILE *f;
     if((f = fopen(path, "w")) == NULL)
@@ -25,7 +28,9 @@ const char path[] = "test_file.txt";
 int failed;
 int counter;
 
-
+/// Check if a file exists
+/// \param path Path to check
+/// \return True if the file exists
 bool fileExists(const char *path){
     FILE *f;
     if ((f = fopen(path, "r"))) {
@@ -36,6 +41,9 @@ bool fileExists(const char *path){
 
 }
 
+/// Run unit test
+/// \param input Input to test
+/// \param expected Expected output
 void test(const char *input, int expected){
     
     counter++;
@@ -53,6 +61,7 @@ void test(const char *input, int expected){
     }
     printf("%s", reset);
 }
+
 void runTests() {
     if (fileExists(path)) {
         printError("Test file already exists.\n");

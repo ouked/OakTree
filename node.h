@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/// Types of Operations
 enum opType{ADD, SUB, MUL, DIV, NEG, NUM, ERR};
 
+/// Node structure.
 struct node {
     enum opType type;
     int data;
@@ -10,19 +12,25 @@ struct node {
     struct node *right;
 };
 
-// create a new op node 
-// data = 0 if read
+/// Create a new operation node
+/// \param optype Type of operation
+/// \return New node
 extern struct node *newOpNode(enum opType optype);
 
 
-// create a new num node
-// no children
+/// Create a new number node
+/// \param data Value of new node
+/// \return New node
 extern struct node *newNumNode(int data);
 
 
-// check if node is safe ((num) or (operator with 2 valid children))
+/// Check if a node is safe ((number node) or (operator node with 2 valid children))
+/// \param n Node to check
+/// \return True if the node is safe
 extern int isSafe(struct node *n);
 
 
-// evaluates node 
+/// Evaluates the value of a node
+/// \param n Node to evaluate
+/// \return Value of the given node
 extern int valueOf(struct node *n);

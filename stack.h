@@ -1,11 +1,22 @@
-// returns head of stack without removing it
+/// Get head of stack without removing it
+/// \param stack Stack to peek from
+/// \param stackPointer Pointer for stack
+/// \return Top node
 extern struct node *peek(struct node *stack[], int *stackPointer);
 
-// returns head of stack and removes it
+/// Get head of stack and remove iti
+/// \param stack Stack to pop from
+/// \param stackPointer Pointer for stack
+/// \return Top node
 extern struct node *pop(struct node *stack[], int *stackPointer);
 
-// adds node to stack
+/// Get head of stack and remove iti
+/// \param stack Stack to pop from
+/// \param stackPointer Pointer for stack
+/// \return Top node
 extern void push(struct node *stack[], int *stackPointer, struct node *n);
 
-// create tree from file at path
+/// Create a tree from a filepath.
+/// \param path Path to read file from
+/// \return Head of tree
 extern struct node *treeFromFile(const char *path);
