@@ -4,6 +4,7 @@ A postfix notation expression evaluator, using a stack to build an abstract synt
 
 This personal project has taught me a lot about data structures and pointers in C, and has given me an initial insight to the inner workings of compilers.
 
+> **Note:** I am currently rewriting this project in C++ as a learning exercise: [ouked/OakTreeCPP]
 ## Example input/output ⚙️
 
 |                    Input| Output| Comments                                                                        |
