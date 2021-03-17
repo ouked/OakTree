@@ -2,7 +2,7 @@
 
 A postfix notation expression evaluator, using a stack to build an abstract syntax tree.
 
-This personal project has taught me a lot about data structures and pointers in C, and has given me an initial insight to the inner-workings of compilers.
+This personal project has taught me a lot about data structures and pointers in C, and has given me an initial insight to the inner workings of compilers.
 
 ## Example input/output ⚙️
 
